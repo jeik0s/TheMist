@@ -34,13 +34,21 @@ public class playerMovment : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime * -1);
+        controller.Move(move * speed * Time.deltaTime);
 
-        // Fixme jumping V
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        //transform.Rotate(0,180,0);
+        
+
+        //Debug.Log(x);
+
+        // Fixme jumping V with salto w przód
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Debug.Log("jump");
+            //transform.localRotation = Quaternion.Euler(z * 360, 0, 0);
+
             velocity.y = (Mathf.Sqrt(jumpHeight * 2f * gravity)) * -1;
+            //Debug.Log(velocity.y);
+            //transform.localRotation = Quaternion.Euler(0, 0, z * 360);
         }
 
 
