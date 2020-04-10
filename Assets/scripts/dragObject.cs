@@ -6,7 +6,8 @@ public class dragObject : MonoBehaviour
 {
 
 
-    float pushForce = 0.001f;
+    public float pushForce = 200000f;
+    public float IncreasedForce = 0.1f;
     public Transform CameraTransform;
     public Rigidbody rigidbody;
     public Transform PlayerTransform;
@@ -31,20 +32,32 @@ public class dragObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-
-        rigidbody.useGravity = false;
         Vector3 speed;
-        speed.x = transform.position.x + ((CameraTransform.transform.position.x - transform.position.x) * 1.1f * Time.deltaTime);
-        speed.y = transform.position.y + ((CameraTransform.transform.position.y - transform.position.y - 5)*1.1f* Time.deltaTime);
-        speed.z = transform.position.z + ((CameraTransform.transform.position.z - transform.position.z + 2) * 1.1f * Time.deltaTime);
+
+        if (rigidbody.mass < 5)
+        {
+            rigidbody.useGravity = false;
+            speed.x = transform.position.x + ((CameraTransform.transform.position.x - transform.position.x) * 1.1f * Time.deltaTime);
+            speed.y = transform.position.y + ((CameraTransform.transform.position.y - transform.position.y - 5) * 1.1f * Time.deltaTime);
+            speed.z = transform.position.z + ((CameraTransform.transform.position.z - transform.position.z + 2) * 1.1f * Time.deltaTime);
+        } else
+        {
+            speed.x = GetMouseWorldPos().x;
+            speed.x = transform.position.x + ((GetMouseWorldPos().x - transform.position.x) * 1.1f * Time.deltaTime);
+            speed.y = transform.position.y;
+            speed.z = GetMouseWorldPos().z;
+            speed.z = transform.position.z + ((GetMouseWorldPos().z - transform.position.z) * 1.1f * Time.deltaTime);
+        }
         transform.position = speed;
 
         if (Input.GetMouseButtonDown(1))
         {
-            rigidbody.useGravity = false;
+            if (rigidbody.mass < 5)
+                rigidbody.useGravity = false;
 
-            pushForce = pushForce * 2;
-            Debug.Log(pushForce);
+            if(IncreasedForce < 3.2)
+                IncreasedForce = IncreasedForce * 2;
+            Debug.Log(IncreasedForce);
         }
     }
 
@@ -60,7 +73,8 @@ public class dragObject : MonoBehaviour
         throwTo.x = GetMouseWorldPos().x;
         throwTo.y = PlayerTransform.position.y;
 
-        rigidbody.AddForce((throwTo - transform.position).normalized * 200000 * Time.smoothDeltaTime);
+        rigidbody.AddForce((throwTo - transform.position).normalized * pushForce * IncreasedForce * Time.deltaTime);
+        IncreasedForce = 0.1f;
     }
 
 }
