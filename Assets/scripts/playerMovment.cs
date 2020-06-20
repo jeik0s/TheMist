@@ -27,7 +27,7 @@ public class playerMovment : MonoBehaviour
             velocity.y = 2f;
         }
 
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

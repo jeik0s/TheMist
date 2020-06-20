@@ -29,7 +29,7 @@ public class OpenScript : MonoBehaviour
         if (((light.range + light1.range + light2.range) == 15) || alreadyopened == true)
         {
             timer += Time.deltaTime;
-            float seconds = timer % 60;
+            float seconds = timer;
 
 
             alreadyopened = true;
