@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerComing : MonoBehaviour
 {
-
+    // Skrytpty odpowiedajace za dana animacje;
+    //  tu skrypt spadajacych kamieni
+    // + sprawdzenie
     public Transform PlayerTransform;
     // Start is called before the first frame update
 

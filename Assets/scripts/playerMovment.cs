@@ -18,20 +18,10 @@ public class playerMovment : MonoBehaviour
     bool isGrounded;
 
 
-    void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.tag == "enemy")
-        {
-
-            Debug.Log("dupa");
-        }
-    }
-
-
     // Update is called once per frame
     void Update()
     {
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y > 0)
@@ -40,7 +30,7 @@ public class playerMovment : MonoBehaviour
         }
 
         //Debug.Log(isGrounded);
-
+        // TODO : zmienić poruszanie  z vector forward zamiast addforca
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 

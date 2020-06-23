@@ -11,6 +11,9 @@ public class colliderChecker : MonoBehaviour
     public int pushesClicked = 0;
     public Light light;
 
+    // Płytki naciskowe, może być nieskończoność
+    // Sprawdzenie za pomoca pushesClicked;
+
     void OnCollisionEnter(Collision collision)
     {
         pushesClicked = pushesClicked + 1;

@@ -36,7 +36,7 @@ public class followPlayer : MonoBehaviour
     // Update is called once per fr  ame
     void Update()
     {
-
+    // TODO : można poprawić to na sprawdzenie tylko raz
         timer += Time.deltaTime;
         float seconds = timer % 60;
 
@@ -57,7 +57,7 @@ public class followPlayer : MonoBehaviour
 
 
         if (Input.GetKey("2")){
-            Debug.Log("zamiana w pajonka");
+            Debug.Log("zamiana w pajooooonka");
             if (changedInSpider == false && seconds > 2)
             {
                 Spell1.color = Color.black;
@@ -90,7 +90,7 @@ public class followPlayer : MonoBehaviour
         }
 
 
-
+        // TODO : ustawić zawsze tę samą pozycje
         Vector3 newPos = playerTransform.position + offset;
 
         //transform.position = playerTransform.transform.position + offset;
