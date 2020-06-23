@@ -1,1 +1,1 @@
-GK 2020 Unity project - TheMist, 3d shooter with paranormal elements 
+GK 2020 Unity project - TheMist - puzzle and adventure game
