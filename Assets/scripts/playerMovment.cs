@@ -17,6 +17,18 @@ public class playerMovment : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+
+    void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "enemy")
+        {
+
+            Debug.Log("dupa");
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {

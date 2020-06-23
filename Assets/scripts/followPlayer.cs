@@ -32,6 +32,7 @@ public class followPlayer : MonoBehaviour
         Cursor.visible = false;
     }
 
+
     // Update is called once per fr  ame
     void Update()
     {

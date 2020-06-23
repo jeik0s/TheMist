@@ -26,7 +26,7 @@ public class OpenScript : MonoBehaviour
     void Update()
     {
 
-        if (((light.range + light1.range + light2.range) == 15) || alreadyopened == true)
+        if (((light.range + light1.range + light2.range) == 45) || alreadyopened == true)
         {
             timer += Time.deltaTime;
             float seconds = timer;

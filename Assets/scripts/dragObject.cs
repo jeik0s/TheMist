@@ -55,8 +55,8 @@ public class dragObject : MonoBehaviour
             if (rigidbody.mass < 5)
                 rigidbody.useGravity = false;
 
-            if(IncreasedForce < 3.2)
-                IncreasedForce = IncreasedForce * 2;
+            if(IncreasedForce < 6.3)
+                IncreasedForce = IncreasedForce * 3;
             Debug.Log(IncreasedForce);
         }
     }
