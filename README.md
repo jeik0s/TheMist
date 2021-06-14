@@ -1,5 +1,5 @@
 <h1>TheMist - DesertDesert</h1>
-GK 2020 Unity project - puzzle adventure game
+The game aims to familiarize the recipient with the ethos of ancient Egypt through references to Egyptian mythology. This theme itself is very rarely used in games, which makes it unique from the competition. To diversify the plot, it will also have fantasy elements. 
 
 <br />
 <br /> Gamedoc:
